@@ -14,6 +14,8 @@ void setup() {
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
+  pinMode(led4, OUTPUT);
+  pinMode(led5, OUTPUT);
 }
 
 void loop() {
@@ -26,16 +28,18 @@ void loop() {
       digitalWrite(led1, LOW);
       digitalWrite(led2, HIGH);
       digitalWrite(led3, HIGH);
-      delay(1100);
+      delay(1200);
       digitalWrite(led1, LOW);
       digitalWrite(led2, LOW);
       delay(7000);
       digitalWrite(led1, HIGH);
       digitalWrite(led2, LOW);
       digitalWrite(led3, LOW);
-      delay(1100);
+      digitalWrite(led5, HIGH);
+      delay(1200);
       digitalWrite(led1, LOW);
       digitalWrite(led2, LOW);
+      digitalWrite(led5, LOW);
       executed = true; // Se marca como ejecutado
       executionTime = currentMillis; // Se guarda el tiempo actual
       Serial.end(); // Se cierra el puerto serial
@@ -55,9 +59,9 @@ void loop() {
       executionTime = currentMillis; 
       Serial.end(); 
     }
-    digitalWrite(led5, HIGH);
+    digitalWrite(led4, HIGH);
     delay(15000);
-    digitalWrite(led5, LOW);
+    digitalWrite(led4, LOW);
   }
 
   // Si ya se ha ejecutado y han pasado 15 segundos, se reinicia la variable executed
